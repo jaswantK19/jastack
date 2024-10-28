@@ -1,0 +1,33 @@
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor and IDE files
+*.swp
+*.swo
+*.bak
+.vscode/
+.idea/
+
+# Ignore build output
+build/
+dist/
+node_modules/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore sensitive or environment-specific files
+.env
+secrets/
+
+# Ignore compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore package manager files
+npm-debug.log
+yarn-error.log
