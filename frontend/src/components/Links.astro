@@ -1,0 +1,49 @@
+---
+// Links.astro
+import { Icon } from 'astro-icon/components';
+
+const socialLinks = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/jaswantK19',
+    icon: 'mdi:github'
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/jaswantk19',
+    icon: 'mdi:linkedin'
+  },
+  {
+    name: 'Twitter',
+    url: 'https://twitter.com/iJaswant1',
+    icon: 'mdi:twitter'
+  },
+  {
+    name: 'Email',
+    url: 'mailto:jaswantkondurofficial@gmail.com',
+    icon: 'mdi:email'
+  }
+];
+---
+
+<div class="flex flex-wrap justify-center items-center gap-4 mt-6">
+  {socialLinks.map((link) => (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:scale-110 transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/25"
+      aria-label={`Visit ${link.name}`}
+    >
+      <Icon 
+        name={link.icon} 
+        class="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200"
+      />
+      <span 
+        class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-800 dark:bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap"
+      >
+        {link.name}
+      </span>
+    </a>
+  ))}
+</div>

@@ -1,0 +1,111 @@
+---
+import { Image } from 'astro:assets';
+import pythonLogo from './images/python.svg';
+import javaScriptLogo from './images/javasc.svg'
+import fastAPI from './images/fastapi.svg'
+import vueLogo from './images/vue.svg'
+import astroLogo from './images/astro.svg'
+
+const techStack = [
+  { name: 'Python', src: pythonLogo },
+  { name: 'JavaScript', src: javaScriptLogo },
+  { name: 'FastAPI', src: fastAPI },
+  { name: 'Vue.js', src: vueLogo },
+  { name: 'Astro', src: astroLogo }
+  
+];
+---
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-50 dark:bg-gray-900">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaswant - Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
+    
+    
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      
+      <div class="animate-fade-in">
+        <div class="inline-block">
+          <span class="relative inline-flex">
+            <span class="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+              Hi there! I'm Jaswant
+            </span>
+            <span class="text-4xl sm:text-5xl animate-wave origin-bottom-right ml-4">
+              👋
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Introduction Text -->
+      <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+        I'm a <span class="font-semibold text-purple-600 dark:text-purple-400">software engineer</span> and 
+        <span class="font-semibold text-pink-600 dark:text-pink-400">full-stack developer</span> who loves 
+        building things and solving problems. Passionate about learning new technologies 
+        and creating scalable applications that make a difference.
+      </p>
+
+      <!-- Call to Action Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <a href="#portfolio" 
+           class="px-6 py-3 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 
+                  transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-purple-500/25">
+          View My Work
+        </a>
+        <a href="#contact" 
+           class="px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white 
+                  font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transform hover:scale-105 
+                  transition-all duration-200 shadow-lg">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Tech Stack Pills -->
+      <div class="pt-8">
+        <div class="flex flex-wrap justify-center gap-4">
+          {techStack.map((tech) => (
+            <div class="flex flex-col items-center">
+              <Image
+                src={tech.src}
+                alt={`${tech.name} logo`}
+                width={48}
+                height={48}
+                class="hover:scale-105 transition-transform duration-200"
+              />
+              <span class="text-sm text-gray-700 dark:text-gray-300 mt-2">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
+
+<style>
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    75% { transform: rotate(-15deg); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-wave {
+    animation: wave 2s infinite;
+    display: inline-block;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+</style>
